@@ -15,8 +15,11 @@ final class PostListInteractor {
                 DispatchQueue.main.async {
                     view?.display(posts)
                 }
-            case .failure:
+            case .failure(let error):
                 // TODO: - Handle the error
+                print("=====> \(error)")
+                print("=====> \(error.localizedDescription)")
+                
                 break
             }
         }
